@@ -1,0 +1,9 @@
+[color "status"]
+	changed = cyan
+	untracked = magenta
+	added = yellow
+[color "diff"]
+	old = magenta
+[user]
+	email = wil.selwood@sa.catapult.org.uk
+	name = Wil Selwood
