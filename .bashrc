@@ -116,6 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export BROWSER=chrome
+
+
+# Start ssh-agent
 export SSH_AUTH_SOCK=$HOME/.ssh-socket
 
 ssh-add -l ? /dev/null 2>&1

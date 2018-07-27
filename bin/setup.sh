@@ -1,9 +1,10 @@
 #!/bin/sh
 
 # This needs to be run with sudo
+add-apt-repository ppa:webupd8team/java
 apt update
 apt upgrade -y
-apt install -y build-essential git ssh vim tmux make wget zip python3 python3-pip
+apt install -y build-essential git ssh vim tmux make wget zip python3 python3-pip oracle-java8-installer
 
 pip3 install --upgrade pip
 
@@ -22,3 +23,6 @@ cp ../.* ~/
 
 ln -s /mnt/c/git /git
 ln -s /mnt/c/data /data
+
+## symlink chrome so xdg-open can work
+ln -s /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe /usr/bin/chrome
