@@ -1,0 +1,16 @@
+build-essential
+git
+ssh
+vim
+tmux
+make
+wget
+curl
+zip
+python3
+python3-pip
+xdg-utils
+oracle-java8-installer
+dos2unix
+jq
+html-xml-utils

@@ -3,11 +3,12 @@
 # This needs to be run with sudo
 
 ## Java repo and package install.
-## When this package list gets a bit bigger move this into a file.
 add-apt-repository ppa:webupd8team/java
 apt update
 apt upgrade -y
-apt install -y build-essential git ssh vim tmux make wget zip python3 python3-pip xdg-util oracle-java8-installer dos2unix jq libxml-xpath-perl html-xml-utils
+
+## Install from package list. 
+apt install -y $(cat ../pkglist.txt)
 
 ## Update pip 
 pip3 install --upgrade pip
