@@ -1,19 +1,29 @@
 #!/bin/sh
 
 # This needs to be run with sudo
+
+## Java repo and package install.
+## When this package list gets a bit bigger move this into a file.
 add-apt-repository ppa:webupd8team/java
 apt update
 apt upgrade -y
-apt install -y build-essential git ssh vim tmux make wget zip python3 python3-pip oracle-java8-installer
+apt install -y build-essential git ssh vim tmux make wget zip python3 python3-pip xdg-util oracle-java8-installer dos2unix jq libxml-xpath-perl html-xml-utils
 
+## Update pip 
 pip3 install --upgrade pip
+## TODO: install more pip bits
 
+## bin dir in home folder which ends up on the path. 
 mkdir -p ~/bin
 
-wget https://github.com/golang/dep/releases/download/v0.4.1/dep-linux-amd64 -O ~/bin/dep
+## Install dep
+dep_url=$(curl --silent "https://api.github.com/repos/golang/dep/releases/latest" | jq -r '.assets[] | select(.name | endswith("linux-amd64")).browser_download_url')
+wget $dep_url -O ~/bin/dep
 chmod +x ~/bin/dep
 
-wget https://dl.google.com/go/go1.9.4.linux-amd64.tar.gz -O ~/go-linux.tar.gz
+## Install go
+go_url=$(curl --silent "https://golang.org/dl/" | hxnormalize -x | hxselect -s '\n' -i 'a.downloadBox' | grep linux-amd64 | grep -Po 'http[^\"]+')
+wget $go_url -O ~/go-linux.tar.gz
 tar xzf ~/go-linux.tar.gz -C ~/
 ln -s ~/go/bin/go ~/bin/go
 ln -s ~/go/bin/godoc ~/bin/godoc
