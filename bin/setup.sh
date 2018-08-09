@@ -37,3 +37,6 @@ ln -s /mnt/c/data /data
 
 ## symlink chrome so xdg-open can work
 ln -s /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe /usr/bin/chrome
+
+## Symlink m2 folders
+ln -s /mnt/c/Users/Wil.Selwood/.m2/ ~/.m2
