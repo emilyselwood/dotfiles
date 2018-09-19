@@ -9,8 +9,14 @@ curl
 zip
 python3
 python3-pip
+conda
 xdg-utils
 oracle-java8-installer
 dos2unix
 jq
 html-xml-utils
+shellcheck
+htop
+beep
+inetutils-traceroute
+ffmpeg
