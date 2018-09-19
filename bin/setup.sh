@@ -19,12 +19,12 @@ mkdir -p ~/bin
 
 ## Install dep
 dep_url=$(curl --silent "https://api.github.com/repos/golang/dep/releases/latest" | jq -r '.assets[] | select(.name | endswith("linux-amd64")).browser_download_url')
-wget $dep_url -O ~/bin/dep
+wget "$dep_url" -O ~/bin/dep
 chmod +x ~/bin/dep
 
 ## Install go
 go_url=$(curl --silent "https://golang.org/dl/" | hxnormalize -x | hxselect -s '\n' -i 'a.downloadBox' | grep linux-amd64 | grep -Po 'http[^\"]+')
-wget $go_url -O ~/go-linux.tar.gz
+wget "$go_url" -O ~/go-linux.tar.gz
 tar xzf ~/go-linux.tar.gz -C ~/
 ln -s ~/go/bin/go ~/bin/go
 ln -s ~/go/bin/godoc ~/bin/godoc
