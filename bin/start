@@ -1,0 +1,10 @@
+#!/bin/bash
+TOOLPATH=explorer.exe
+if [[ $# -ge 0 ]]; then
+        for var in "$@"
+        do
+                "$TOOLPATH" $(wslpath -w $var) &
+        done
+else
+        "$TOOLPATH" $(wslpath -w $(pwd)) &
+fi

@@ -1,0 +1,10 @@
+#!/bin/bash
+CODEPATH="/mnt/c/Users/Wil.Selwood/AppData/Local/Programs/Microsoft VS Code/Code.exe"
+if [[ $# -ge 0 ]]; then
+	for var in "$@"
+	do
+		"$CODEPATH" $(wslpath -w $var) &
+	done
+else
+	"$CODEPATH" $(wslpath -w $(pwd)) &
+fi
