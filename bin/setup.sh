@@ -35,6 +35,10 @@ cp ../.* ~/
 ln -s /mnt/c/git /git
 ln -s /mnt/c/data /data
 
+## symlink in docker
+# Much easier than faffing around forwarding pipes through things.
+ln -s "/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe" ~/bin/docker
+
 ## symlink chrome so xdg-open can work
 ln -s /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe /usr/bin/chrome
 
