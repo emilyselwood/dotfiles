@@ -2,10 +2,12 @@
 
 # This needs to be run with sudo
 
-## Java repo and package install.
-add-apt-repository ppa:webupd8team/java
 apt update
 apt upgrade -y
+
+apt install dos2unix
+
+dos2unix ../pkglist.txt
 
 ## Install from package list. 
 apt install -y $(cat ../pkglist.txt)
